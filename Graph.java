@@ -74,28 +74,6 @@ public class Graph
 
         public static void main(String[] args) 
         {
-		public static void printBFS(Graph g, int v, boolean[] discovered)
-		{
-			Queue<Integer> q = new ArrayDeque<>();
-
-			discovered[v] = true;
-
-			q.add(v);
-
-			while (!q.isEmpty())
-			{
-				v = q.poll();
-				System.out.print(v + " ");
-				for (int u : g.nodeLookup.get(v).adjacent)
-				{
-					if (!discovered[u])
-					{
-						discovered[u] = true;
-						q.add(u);
-					}
-				}
-			}
-		}
 
 		Node temp1 = new Node(1);
 		Node temp2 = new Node(2);
@@ -138,4 +116,27 @@ public class Graph
 		//Queue<Integer> q = new ArrayDequeue<>();
 
         }
+
+        public static void printBFS(Graph g, int v, boolean[] discovered)
+		{
+			Queue<Integer> q = new ArrayDeque<>();
+
+			discovered[v] = true;
+
+			q.add(v);
+
+			while (!q.isEmpty())
+			{
+				v = q.poll();
+				System.out.print(v + " ");
+				for (int u : g.nodeLookup.get(v).adjacent)
+				{
+					if (!discovered[u])
+					{
+						discovered[u] = true;
+						q.add(u);
+					}
+				}
+			}
+		}
 }
