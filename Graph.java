@@ -138,7 +138,7 @@ public class Graph
 			{
 				v = g.getNode(q.poll());
 				System.out.print(v + " ");
-				for (Node u : g.nodeLookup.get(v).adjacent)
+				for (Node u : g.nodeLookup.get(v.id).adjacent)
 				{
 					if (!discovered[u.id])
 					{
