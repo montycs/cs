@@ -114,27 +114,36 @@ public class Graph
 		System.out.println(tre.hasPathDFS(6,5));
 
 		//Queue<Integer> q = new ArrayDequeue<>();
+		System.out.println("-------------------------");
+		boolean[] discovered = new boolean[6];
+		for (int i = 0; i < 6; i++)
+		{
+			if (discovered[i] == false)
+			{
+				printBFS(tre, temp1, discovered);
+			}
+		}
 
         }
 
-        public static void printBFS(Graph g, int v, boolean[] discovered)
+        public static void printBFS(Graph g, Node v, boolean[] discovered)
 		{
 			Queue<Integer> q = new ArrayDeque<>();
 
-			discovered[v] = true;
+			discovered[v.id] = true;
 
-			q.add(v);
+			q.add(v.id);
 
 			while (!q.isEmpty())
 			{
-				v = q.poll();
+				v = g.getNode(q.poll());
 				System.out.print(v + " ");
-				for (int u : g.nodeLookup.get(v).adjacent)
+				for (Node u : g.nodeLookup.get(v).adjacent)
 				{
-					if (!discovered[u])
+					if (!discovered[u.id])
 					{
-						discovered[u] = true;
-						q.add(u);
+						discovered[u.id] = true;
+						q.add(u.id);
 					}
 				}
 			}
