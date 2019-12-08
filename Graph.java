@@ -90,7 +90,7 @@ public class Graph
 		tre.nodeLookup.put(5, temp5);
 		tre.nodeLookup.put(6, temp6);
 
-                tre.addEdge(1, 2);
+                //tre.addEdge(1, 2);
 		tre.addEdge(1, 3);
                 tre.addEdge(2, 4);
 		tre.addEdge(3, 6);
@@ -115,12 +115,12 @@ public class Graph
 
 		//Queue<Integer> q = new ArrayDequeue<>();
 		System.out.println("-------------------------");
-		boolean[] discovered = new boolean[6];
-		for (int i = 0; i < 6; i++)
+		boolean[] discovered = new boolean[7];
+		for (int i = 0; i < 7; i++)
 		{
 			if (discovered[i] == false)
 			{
-				printBFS(tre, temp1, discovered);
+				printBFS(tre, temp2, discovered);
 			}
 		}
 
@@ -137,7 +137,7 @@ public class Graph
 			while (!q.isEmpty())
 			{
 				v = g.getNode(q.poll());
-				System.out.print(v + " ");
+				System.out.print(v.id + " ");
 				for (Node u : g.nodeLookup.get(v.id).adjacent)
 				{
 					if (!discovered[u.id])
