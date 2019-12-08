@@ -48,15 +48,15 @@ public class Graph1<T>
 
 	public boolean hasNode(T node)
 	{
-		if (graphMap.containsKey(s))
+		if (graphMap.containsKey(node))
 		{
-			System.out.println("Graph contains: " + s);
+			System.out.println("Graph contains: " + node);
 			return true;
 		}
 
 		else
 		{
-			System.out.println("Graph does not contain: " + s);
+			System.out.println("Graph does not contain: " + node);
 			return false;
 		}
 	}
@@ -71,7 +71,7 @@ public class Graph1<T>
 
 		else
 		{
-			System.out.println("Graph does not contain edge.")
+			System.out.println("Graph does not contain edge.");
 			return false;
 		}
 	}

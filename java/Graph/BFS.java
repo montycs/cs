@@ -1,5 +1,3 @@
-import Graph1
-
 public class BFS
 {
 	public static void main(String[] args)
@@ -18,7 +16,7 @@ public class BFS
 
 		g.getNodeCount();
 
-		g.getEdgesCount(count);
+		g.getEdgeCount(true);
 
 		g.hasEdge(3, 4);
 
