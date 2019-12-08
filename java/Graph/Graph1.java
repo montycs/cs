@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Graph1<T>
 {
-	private HashMap<T, LinkedList<T>> graphMap = new HashMap<>();
+	public HashMap<T, LinkedList<T>> graphMap = new HashMap<>();
 	//int nodes = graphMap.keySet().size();
 
 	public void addNode(T node)
