@@ -148,4 +148,24 @@ public class Graph
 				}
 			}
 		}
+
+		public static void recursiveBFS(Graph g, Queue<Integer> q, boolean[] discovered)
+		{
+
+			if (q.isEmpty())
+				return;
+
+			Node v = g.getNode(q.poll());
+			System.out.print(v.id + " ");
+			for (Node u : g.nodeLookup.get(v.id).adjacent)
+			{
+				if (!discovered[u.id])
+				{
+					discovered[u.id] = true;
+					q.add(u.id);
+				}
+			}
+
+			recursiveBFS(graph, q, discovered);
+		}
 }
